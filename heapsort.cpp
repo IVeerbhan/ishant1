@@ -1,5 +1,5 @@
 #include<stdio.h>
-int k=1;
+int k=1;// index counting for the sorted array
  void display(int b[],int i);
 
  
@@ -7,8 +7,8 @@ int k=1;
  {
  	int N=size/2,flag,temp;
  	   for(;N>0;N--)
- 	 {      flag=0;   
-	         if(2*N>size) continue;
+ 	 {      flag=0;// this lets us knw if we have achieved a min heap   
+	         if(2*N>size) continue;// bounds checking
  	   
 		
 		 else{
@@ -32,14 +32,14 @@ int k=1;
  	}
  	if(flag==0)
  	{
- 		b[k]=a[1];
+ 		b[k]=a[1];// adding value to the sorted array
 		 a[1]=a[size];
-		 size--; k++;
- 		if(size==1)
+		 size--; k++;//reducing our operation area ie reducing the size 
+ 		if(size==1) // directly adding if we have only one element left
  		  { b[k]=a[size];
  		    display(b,k);}
  		else
- 		heapify(a,b,size);
+ 		heapify(a,b,size);//heapify with reduced size
  		
  	}
  	else if(flag==1)
